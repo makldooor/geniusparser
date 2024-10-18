@@ -1,0 +1,7 @@
+set(CMAKE_CXX_STANDARD 20)
+find_package(CURL REQUIRED)
+add_executable(geniuspars geniuspars.cpp gethtml.cpp json_parser.cpp)
+include_directories(${CURL_INCLUDE_DIR})
+add_subdirectory(LibXml2)
+target_link_libraries(geniuspars ${CURL_LIBRARIES})
+target_link_libraries(geniuspars LibXml2)
